@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ray Jee Tea Stall | Best Chai & Snacks</title>
+  <meta name="description" content="Ray Jee Tea Stall - Garma-garam chai, masala chai, lemon tea, bun maska, samosa & more. Fresh, hygienic & pocket-friendly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-3h1+9mQq8h9j2sK4w8xqkq4E6wq5Y1Jc2mVgV9j9wEwZ2s3nJr4j2r4j2k9u2u7r9v9s8s8" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>☕</text></svg>">
+  <style>
+    :root{
+      --primary:#7a3e2b; /* chai brown */
+      --accent:#ffb703;  /* turmeric gold */
+      --cream:#fff7ed;
+      --dark:#1f1a17;
+      --muted:#8b6f63;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--dark); background:var(--cream);
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1100px, 92%); margin-inline:auto}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50; background:#fff; box-shadow:0 4px 16px rgba(0,0,0,.06);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:10px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
+    .brand .logo{width:42px; height:42px; display:grid; place-items:center; background:var(--accent); border-radius:50%; font-size:22px}
+    nav ul{display:flex; gap:18px; list-style:none; padding:0; margin:0}
+    nav a{padding:8px 12px; border-radius:999px}
+    nav a:hover{background:var(--cream)}
+    .cta-btn{background:var(--primary); color:#fff; padding:10px 16px; border:none; border-radius:999px; cursor:pointer}
+
+    /* Hero */
+    .hero{position:relative; isolation:isolate;}
+    .hero .content{display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center; padding:48px 0}
+    .badge{display:inline-flex; align-items:center; gap:8px; background:#fff; padding:6px 12px; border-radius:999px; box-shadow:0 2px 10px rgba(0,0,0,.05); font-size:14px}
+    h1{font-size:clamp(28px, 4vw, 46px); line-height:1.1; margin:14px 0}
+    .lead{font-size:clamp(15px, 1.6vw, 18px); color:#3c302b}
+    .hero-visual{position:relative}
+    .cup{
+      aspect-ratio:1; border-radius:50%; background:radial-gradient(120px 120px at 70% 30%, #fff 0 8%, #e9d5c7 8% 65%, transparent 66%),
+      conic-gradient(from 200deg, #9c6048 0 70%, #7a3e2b 70% 100%);
+      box-shadow:0 20px 60px rgba(122,62,43,.25); width:min(420px, 90%); margin:0 auto; display:grid; place-items:center; color:#fff; font-weight:700
+    }
+    .cup::after{content:"RAY JEE"; letter-spacing:2px}
+
+    /* Sections */
+    section{padding:56px 0}
+    .section-title{font-size:28px; margin:0 0 8px}
+    .section-sub{color:var(--muted); margin:0 0 24px}
+
+    /* Menu Grid */
+    .grid{display:grid; gap:18px}
+    .menu-grid{grid-template-columns:repeat(auto-fit, minmax(220px, 1fr))}
+    .card{background:#fff; border-radius:var(--radius); padding:18px; box-shadow:0 8px 30px rgba(0,0,0,.06); display:flex; flex-direction:column; justify-content:space-between}
+    .price{margin-top:8px; font-weight:700}
+
+    /* Specials */
+    .special{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    .special .tile{background:#fff; border-radius:var(--radius); padding:18px; box-shadow:0 8px 30px rgba(0,0,0,.06)}
+
+    /* Gallery */
+    .gallery{display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:10px}
+    .gallery img{border-radius:12px; aspect-ratio:4/3; object-fit:cover}
+
+    /* Testimonial */
+    .testimonial{background:#fff; border-left:6px solid var(--accent); padding:18px; border-radius:12px}
+
+    /* Visit */
+    .visit{display:grid; grid-template-columns:1.2fr .8fr; gap:18px}
+    .map{border:0; width:100%; height:300px; border-radius:12px}
+
+    /* Footer */
+    footer{background:#111; color:#ddd; padding:32px 0}
+    footer a{color:#fff}
+
+    /* Mobile */
+    @media (max-width: 900px){
+      .hero .content{grid-template-columns:1fr}
+      .special{grid-template-columns:1fr}
+      .visit{grid-template-columns:1fr}
+      nav ul{display:none}
+      .menu-toggle{display:inline-flex; align-items:center; gap:8px}
+    }
+  </style>
+
+  <!-- Local Business SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Ray Jee Tea Stall",
+    "image": "",
+    "servesCuisine": "Indian",
+    "priceRange": "₹",
+    "telephone": "+91-00000-00000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Your Street, Your Area",
+      "addressLocality": "Your City",
+      "addressRegion": "Your State",
+      "postalCode": "800000",
+      "addressCountry": "IN"
+    },
+    "openingHours": [
+      "Mo-Su 06:00-22:00"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Ray Jee Tea Stall Home">
+        <span class="logo">☕</span>
+        <span>Ray Jee Tea Stall</span>
+      </a>
+      <nav>
+        <ul aria-label="Primary Navigation">
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#specials">Specials</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+      <a class="cta-btn" href="https://wa.me/919939337868?text=Namaste%20Ray%20Jee!%20Ek%20chai%20aur%20bun%20maska%20order%20karna%20hai." target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i> Order
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container content">
+      <div>
+        <span class="badge"><i class="fa-solid fa-mug-hot"></i>  Since 1998 • 100% Desi Swad</span>
+        <h1>Garma-Garam <span style="color:var(--primary)">Chai</span> & Crunchy Snacks — Har Roz, Har Mood!</h1>
+        <p class="lead">Masala chai, adrak-elaichi wali chai, lemon tea, bun maska, samosa, kachori aur bahut kuchh. Fresh & hygienic — pocket friendly prices.</p>
+        <div style="display:flex; gap:10px; margin-top:18px; flex-wrap:wrap">
+          <a class="cta-btn" href="#menu">See Menu</a>
+          <a class="cta-btn" style="background:var(--accent); color:#000" href="#visit">Find Us</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="cup" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu">
+    <div class="container">
+      <h2 class="section-title">Menu (₹)</h2>
+      <p class="section-sub">Simple. Swadisht. Roz ka favourite.</p>
+      <div class="grid menu-grid">
+        <div class="card">
+          <h3>Cutting Chai</h3>
+          <p>Classic doodh wali chai — balanced & aromatic.</p>
+          <div class="price">₹12</div>
+        </div>
+        <div class="card">
+          <h3>Masala Chai</h3>
+          <p>Elaichi, dalchini, laung ka perfect blend.</p>
+          <div class="price">₹18</div>
+        </div>
+        <div class="card">
+          <h3>Adrak Chai</h3>
+          <p>Tazgi bhara adrak wala kick.</p>
+          <div class="price">₹16</div>
+        </div>
+        <div class="card">
+          <h3>Lemon Tea</h3>
+          <p>Light, tangy & refreshing.</p>
+          <div class="price">₹20</div>
+        </div>
+        <div class="card">
+          <h3>Bun Maska</h3>
+          <p>Soft bun + makkhan = love.</p>
+          <div class="price">₹25</div>
+        </div>
+        <div class="card">
+          <h3>Samosa (2 pc)</h3>
+          <p>Khasta, aloo masala filled. Green chutney ke saath.</p>
+          <div class="price">₹30</div>
+        </div>
+        <div class="card">
+          <h3>Kachori</h3>
+          <p>Moong dal stuffing, crispy shell.</p>
+          <div class="price">₹20</div>
+        </div>
+        <div class="card">
+          <h3>Egg Puff</h3>
+          <p>Flaky pastry with spiced egg.</p>
+          <div class="price">₹28</div>
+        </div>
+      </div>
+      <p style="margin-top:12px; color:var(--muted); font-size:14px">*Prices are sample — apne hisaab se update kar sakte ho.</p>
+    </div>
+  </section>
+
+  <!-- Specials -->
+  <section id="specials" style="background:linear-gradient(180deg,#fff, #fff7ed)">
+    <div class="container">
+      <h2 class="section-title">Aaj ke Special</h2>
+      <p class="section-sub">Roz naya, roz tasty.</p>
+      <div class="special">
+        <div class="tile">
+          <h3><i class="fa-solid fa-star"></i> Kulhad Masala Chai</h3>
+          <p>Mitti ki khushboo ke saath kadak chai — limited stock!</p>
+        </div>
+        <div class="tile">
+          <h3><i class="fa-solid fa-seedling"></i> Gur-Wali Chai (Seasonal)</h3>
+          <p>Cheeni ki jagah asli gud ka swaad. Healthier & yummy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-sub">Chai ke saath kuchh yaadein.</p>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&auto=format&fit=crop" alt="Steaming cup of chai in kulhad"/>
+        <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1200&auto=format&fit=crop" alt="Fresh samosas on plate"/>
+        <img src="https://images.unsplash.com/photo-1533777168198-6d2893568e95?q=80&w=1200&auto=format&fit=crop" alt="Bun maska close-up"/>
+        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=1200&auto=format&fit=crop" alt="People enjoying tea at stall"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" style="background:#fff">
+    <div class="container">
+      <h2 class="section-title">About Ray Jee</h2>
+      <p class="section-sub">Pyaar se bani chai, imaandari se diya swad.</p>
+      <div class="card">
+        <p>1998 se Ray Jee Tea Stall ek hi baat pe tikka hai — quality. Hamari chai special Assam & Darjeeling blend se banti hai, full hygiene ke saath. Daily fresh snacks, fast service aur muskurahat guaranteed. Aaiye, ek cup ho jaye!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Log Kya Kehte Hain</h2>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+        <div class="testimonial">
+          <p>“Yahan ki masala chai literally mood bana deti hai. Bun maska 10/10.”</p>
+          <strong>— Rohan</strong>
+        </div>
+        <div class="testimonial">
+          <p>“Clean, quick & affordable. Subah-subah adrak chai best!”</p>
+          <strong>— Priti</strong>
+        </div>
+        <div class="testimonial">
+          <p>“Kulhad wali chai ki mitti ki khushboo unbeatable.”</p>
+          <strong>— Imran</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit / Contact -->
+  <section id="visit" style="background:linear-gradient(180deg,#fff7ed, #fff)">
+    <div class="container">
+      <h2 class="section-title">Visit & Contact</h2>
+      <p class="section-sub">Roz khule: 6:00 AM – 10:00 PM</p>
+      <div class="visit">
+        <div>
+          <iframe class="map" loading="lazy" allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14225.999999!2d85.1376!3d25.5941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRay%20Jee%20Tea%20Stall!5e0!3m2!1sen!2sin!4v0000000000">
+          </iframe>
+          <small style="color:var(--muted)">Note: Map placeholder hai — apna exact address/coordinates embed kijiye.</small>
+        </div>
+        <div>
+          <div class="card">
+            <h3>Contact</h3>
+            <p><i class="fa-solid fa-location-dot"></i> Your Street, Your Area, Your City</p>
+            <p><i class="fa-solid fa-phone"></i> <a href="tel:+919939337868">+91 99393 37868</a></p>
+            <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/919939337868" target="_blank" rel="noopener">WhatsApp Chat</a></p>
+            <hr style="border:none; height:1px; background:#eee; margin:14px 0">
+            <form id="contactForm" onsubmit="return sendMsg(event)">
+              <label>Naam<br><input required type="text" name="name" placeholder="Aapka naam" style="width:100%; padding:10px; border-radius:10px; border:1px solid #ddd"></label>
+              <label style="display:block; margin-top:10px">Mobile<br><input required type="tel" name="phone" placeholder="10-digit" pattern="[0-9]{10}" style="width:100%; padding:10px; border-radius:10px; border:1px solid #ddd"></label>
+              <label style="display:block; margin-top:10px">Message<br><textarea required name="msg" rows="3" placeholder="Order / enquiry" style="width:100%; padding:10px; border-radius:10px; border:1px solid #ddd"></textarea></label>
+              <button class="cta-btn" type="submit" style="margin-top:10px; width:100%"><i class="fa-regular fa-paper-plane"></i> Send via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between">
+      <p style="margin:0">© <span id="year"></span> Ray Jee Tea Stall. All rights reserved.</p>
+      <p style="margin:0"><a href="#home">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // WhatsApp form submit
+    function sendMsg(e){
+      e.preventDefault();
+      const f = e.target;
+      const name = encodeURIComponent(f.name.value.trim());
+      const phone = f.phone.value.trim();
+      const msg = encodeURIComponent(f.msg.value.trim());
+      if(!/^[0-9]{10}$/.test(phone)){
+        alert('Please enter a valid 10-digit mobile number.');
+        return false;
+      }
+      const text = `Namaste Ray Jee!%0AName: ${name}%0APhone: ${phone}%0AMessage: ${msg}`;
+      // Replace with your WhatsApp number below (with country code, no plus sign removed automatically by wa.me)
+      const waNumber = '9939337868';
+      const url = `https://wa.me/${waNumber}?text=${text}`;
+      window.open(url, '_blank');
+      f.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
